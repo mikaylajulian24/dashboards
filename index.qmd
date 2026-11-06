@@ -1,5 +1,6 @@
 ---
-title: "dashboards"
+title: "Simple Dashboards"
+author: "Mikayla Julian"
 ---
 
 This is a Quarto website.
