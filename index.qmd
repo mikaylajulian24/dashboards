@@ -3,10 +3,10 @@ title: "Simple Dashboards"
 author: "Mikayla Julian"
 ---
 
-This is a Quarto website.
+- Penguins Dashboard
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+- Candy Dashboard
 
 ```{r}
-1 + 1
+
 ```
