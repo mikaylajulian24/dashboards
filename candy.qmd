@@ -53,5 +53,35 @@ list(
 ## Row 2 
 
 ```{r}
+candysugarpercent <- candy %>% 
+  mutate(sugar_category = case_when(
+    sugarpercent <= 0.2 & sugarpercent >= 0 ~ "0.0-0.2% sugar",
+    sugarpercent <= 0.4 & sugarpercent >= 0.2 ~ "0.2-0.4% sugar",
+    sugarpercent <= 0.6 & sugarpercent >= 0.4 ~ "0.4-0.6% sugar",
+    sugarpercent <= 0.8 & sugarpercent >= 0.6 ~ "0.6-0.8% sugar",
+    sugarpercent <= 1.0 & sugarpercent >= 0.8 ~ "0.8-1.0% sugar",
+  ))
 
+count(candy, sugarpercent)
+
+
+candywinpercent <- candy %>% 
+  mutate(sugar_wins = case_when(
+    winpercent <= 25 & winpercent >= 0 ~ "0-25% win rate",
+    winpercent <= 50 & winpercent >= 25 ~ "25-50% win rate",
+    winpercent <= 75 & winpercent >= 50 ~ "30-75% win rate",
+    winpercent <= 100 & winpercent >= 75 ~ "75-100% win rate",
+  ))
+
+
+
+count(candy, winpercent)
+
+candywinsugar <- ggplot(data = candysugarpercent, 
+       aes(x = sugar_category, y = winpercent, label = competitorname)) +
+  geom_boxplot() + 
+  geom_point()
+  geom_text(size = 2)
+
+ggplotly(candywinsugar)
 ```

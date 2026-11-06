@@ -3,12 +3,14 @@ project:
   output-dir: docs
 
 website:
-  title: "dashboards"
-  navbar:
+  title: "Simple Dashboard Projects"
+  navbar: 
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: https://mikaylajulian24.github.io/
+        text: Website Homepage
 
 format:
   html:

@@ -51,7 +51,7 @@ ggplotly(body_mass_bill_length)
 
 # Data table
 
-This dataset describes 344 indivudal penguins and comes from the 'palmerpenguins' package. These three species of penguins live on three different islands in the Palmer Archipelago. 
+This dataset describes 344 indivudal penguins and comes from the 'palmerpenguins' package. These three species of penguins live on three different islands in the Palmer Archipelago.
 
 ```{r}
 penguins <- penguins %>% 
