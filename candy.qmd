@@ -50,9 +50,32 @@ list(
 
 ```
 
+```{r}
+#| content: valuebox
+#| title: "Number of Chocolate Candies"
+
+list(
+  icon = "heart-fill",
+  color = "info",
+  value = sum(candy$type == "chocolate"))
+```
+
+```{r}
+#| content: valuebox
+#| title: "Number of Caramel Candies"
+
+list(
+  icon = "heart-fill",
+  color = "success",
+  value = sum(candy$type == "caramel"))
+```
+
 ## Row 2 
 
 ```{r}
+#| label: sugar-rush
+#| fig-cap: "Does more sugar mean more popular?"
+
 candysugarpercent <- candy %>% 
   mutate(sugar_category = case_when(
     sugarpercent <= 0.2 & sugarpercent >= 0 ~ "0.0-0.2% sugar",
@@ -62,7 +85,7 @@ candysugarpercent <- candy %>%
     sugarpercent <= 1.0 & sugarpercent >= 0.8 ~ "0.8-1.0% sugar",
   ))
 
-count(candy, sugarpercent)
+# count(candy, sugarpercent)
 
 
 candywinpercent <- candy %>% 
@@ -75,13 +98,26 @@ candywinpercent <- candy %>%
 
 
 
-count(candy, winpercent)
+# count(candy, winpercent)
 
 candywinsugar <- ggplot(data = candysugarpercent, 
        aes(x = sugar_category, y = winpercent, label = competitorname)) +
-  geom_boxplot() + 
-  geom_point()
-  geom_text(size = 2)
+  geom_boxplot(fill = "#E83E8C") + 
+  geom_point(color = "#6F42C1") + 
+  labs(
+    title = "Sugar Rush!",
+    x = "Sugar Percentage",
+    y = "Win Percentage"
+  ) +
+    theme(
+      plot.title = element_text(
+        family = "Comic Sans MS",
+        face = "bold",
+        size = 20,
+        hjust = 0.5
+      )
+    )
+
 
 ggplotly(candywinsugar)
 ```
