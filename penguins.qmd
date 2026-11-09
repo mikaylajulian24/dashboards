@@ -57,7 +57,7 @@ This dataset describes 344 indivudal penguins and comes from the 'palmerpenguins
 
 ```{r}
 penguins <- penguins %>% 
-  select(year)
+  select(species, island, bill_length_mm, bill_depth_mm)
 
 knitr::kable(penguins)
 ```
