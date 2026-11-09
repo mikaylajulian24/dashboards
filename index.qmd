@@ -3,10 +3,6 @@ title: "Simple Dashboards"
 author: "Mikayla Julian"
 ---
 
-- Penguins Dashboard
 
-- Candy Dashboard
-
-```{r}
-
-```
+- [Penguins Dashboard](https://mikaylajulian24.github.io/dashboards/penguins)
+- [Candy Dashboard](https://mikaylajulian24.github.io/dashboards/candy)
