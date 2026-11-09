@@ -60,16 +60,6 @@ list(
   value = sum(candy$type == "chocolate"))
 ```
 
-```{r}
-#| content: valuebox
-#| title: "Number of Caramel Candies"
-
-list(
-  icon = "heart-fill",
-  color = "success",
-  value = sum(candy$type == "caramel"))
-```
-
 ## Row 2 
 
 ```{r}
@@ -120,4 +110,12 @@ candywinsugar <- ggplot(data = candysugarpercent,
 
 
 ggplotly(candywinsugar)
+```
+
+```{r}
+candywinpercent <- candywinpercent %>% 
+  arrange (sugarpercent) %>% 
+  select(competitorname, sugarpercent, winpercent, sugar_wins)
+
+knitr::kable(candywinpercent)
 ```
