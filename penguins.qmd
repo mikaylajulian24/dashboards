@@ -1,7 +1,9 @@
 ---
 title: "Palmer Penguins Dashboard"
 author: "Mikayla Julian"
-format: dashboard 
+format: 
+  dashboard:
+    theme: sketchy  
 ---
 
 ```{r}
