@@ -1,6 +1,9 @@
 ---
 title: "Simple Dashboards"
 author: "Mikayla Julian"
+format: 
+  dashboard:
+    theme: sketchy 
 ---
 
 
